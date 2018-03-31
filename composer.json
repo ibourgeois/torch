@@ -12,11 +12,11 @@
   "autoload": {
     "psr-4": {
       "iBourgeois\\Torch\\": "src/"
-    },
-    "autoload-dev": {
-      "psr-4": {
-        "iBourgeois\\Torch\\Tests\\": "tests/"
-      }
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "iBourgeois\\Torch\\Tests\\": "tests/"
     }
   },
   "minimum-stability": "dev",
