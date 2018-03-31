@@ -66,7 +66,7 @@ class TorchServiceProvider extends ServiceProvider
         // publish torch cli tool
         $this->publishes([
             __DIR__.'/../config/torch.php' => config_path('torch.php'),
-        ]);
+        ], 'torch');
 
     }
 }

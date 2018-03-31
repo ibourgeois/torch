@@ -37,6 +37,10 @@ class InitCommand extends Command
      */
     public function handle()
     {
-        //
+        // publish torch config file
+        $this->call('vendor:publish', [
+            '--tag' => 'torch'
+        ]);
+        // create torch directory
     }
 }
