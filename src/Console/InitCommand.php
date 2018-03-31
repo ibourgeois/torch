@@ -3,6 +3,7 @@
 namespace iBourgeois\Torch\Console;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\File;
 
 class InitCommand extends Command
 {
@@ -41,6 +42,8 @@ class InitCommand extends Command
         $this->call('vendor:publish', [
             '--tag' => 'torch'
         ]);
+
         // create torch directory
+        File::makeDirectory(base_path('torch'));
     }
 }
