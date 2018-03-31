@@ -43,20 +43,25 @@ class TorchServiceProvider extends ServiceProvider
     {
         // register torch commands
         if ($this->app->runningInConsole()) {
-            $this->commands([
-                CICommand::class,
-                UpCommand::class,
-                DownCommand::class,
-                FuelCommand::class,
-                InitCommand::class,
-                StopCommand::class,
-                StartCommand::class,
-                ConfigCommand::class,
-                IgniteCommand::class,
-                ServerCommand::class,
-                ConsoleCommand::class,
-            ]);
-        }
+            if (config_path('torch.php')) {
+                $this->commands([
+                    CICommand::class,
+                    UpCommand::class,
+                    DownCommand::class,
+                    FuelCommand::class,
+                    StopCommand::class,
+                    StartCommand::class,
+                    ConfigCommand::class,
+                    IgniteCommand::class,
+                    ServerCommand::class,
+                    ConsoleCommand::class,
+                ]);
+            } else {
+                $this->commands([
+                    InitCommand::class,
+                ]);
+            }
+        };
 
         // publish torch cli tool
         $this->publishes([

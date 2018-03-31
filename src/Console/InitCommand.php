@@ -18,7 +18,7 @@ class InitCommand extends Command
      *
      * @var string
      */
-    protected $description = '';
+    protected $description = 'Initialize torch for this project';
 
     /**
      * Create a new command instance.
