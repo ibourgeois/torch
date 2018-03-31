@@ -1,6 +1,6 @@
-# Laravel Torch
+# iBourgeois Torch
 
-Laravel Docker/CI CLI
+Docker Continuous Integration CLI for Laravel and/or Lumen
 
 ## Installation
 
