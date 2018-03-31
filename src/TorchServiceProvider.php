@@ -43,7 +43,7 @@ class TorchServiceProvider extends ServiceProvider
     {
         // register torch commands
         if ($this->app->runningInConsole()) {
-            if (config_path('torch.php')) {
+            if (file_exists(config_path('torch.php'))) {
                 $this->commands([
                     CICommand::class,
                     UpCommand::class,
