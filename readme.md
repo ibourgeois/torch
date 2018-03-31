@@ -8,16 +8,6 @@ Laravel Docker/CI CLI
 composer require ibourgeois/torch
 ```
 
-Initialize Torch without default presets
-```bash
-php artisan torch:init
-```
-
-Initialize torch with default presets
-```bash
-php artisan torch:init --default
-```
-
 ## ToDo
 
 - [ ] `torch:init`          Initialize Torch
@@ -36,6 +26,14 @@ php artisan torch:init --default
 
 `torch:init` will publish a torch directory into the root of the application. It will publish a config file as well as make the other torch commands available.
 
+Initialize Torch without default presets
+
 ```bash
 php artisan torch:init
+```
+
+Initialize torch with default presets
+
+```bash
+php artisan torch:init --default
 ```
