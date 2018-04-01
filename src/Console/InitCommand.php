@@ -53,7 +53,7 @@ class InitCommand extends Command
             'Docker Version: ' 
             . exec("docker version --format '{{.Server.Version}}'", $version, $return
         ) 
-        ? $this->setDockerVersion($version) 
+        ? $this->setDockerVersion($version[0]) 
         : 'Docker not installed');
 
         
@@ -62,7 +62,7 @@ class InitCommand extends Command
     private function setDockerVersion($version) 
     {
         File::put(base_path($this->torch), '- docker:' . PHP_EOL);
-        File::append(base_path($this->torch), '    version: ' . $version[0]);
+        File::append(base_path($this->torch), '    version: ' . $version);
 
         return $version;
     }
