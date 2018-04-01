@@ -21,6 +21,8 @@ class InitCommand extends Command
      */
     protected $description = 'Initialize torch for this project';
 
+    private $torch = 'torch/torch.yml';
+
     /**
      * Create a new command instance.
      *
@@ -45,5 +47,23 @@ class InitCommand extends Command
 
         // create torch directory
         File::makeDirectory(base_path('torch'));
+
+        // check for Docker
+        $this->info(
+            'Docker Version: ' 
+            . exec("docker version --format '{{.Server.Version}}'", $version, $return
+        ) 
+        ? $this->setDockerVersion($version) 
+        : 'Docker not installed');
+
+        
+    }
+
+    private function setDockerVersion($version) 
+    {
+        File::put(base_path($this->torch), '- docker:');
+        File::put(base_path($this->torch), '    version: ' . $version);
+
+        return $version;
     }
 }
