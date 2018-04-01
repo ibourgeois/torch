@@ -61,8 +61,8 @@ class InitCommand extends Command
 
     private function setDockerVersion($version) 
     {
-        File::put(base_path($this->torch), '- docker:');
-        File::append(base_path($this->torch), '    version: ' . $version);
+        File::put(base_path($this->torch), '- docker:' . PHP_EOL);
+        File::append(base_path($this->torch), '    version: ' . $version[0]);
 
         return $version;
     }
